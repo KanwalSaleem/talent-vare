@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display';
+  src: url('./fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  font-style: normal;
+}
+
+
+body {
+  font-family: 'Neue Haas Grotesk Display', sans-serif;
+}
