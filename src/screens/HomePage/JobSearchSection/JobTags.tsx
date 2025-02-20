@@ -15,7 +15,7 @@ export const JobTags = () =>{
                     textTransform: "none",
                     borderColor: "primary.light",
                     color: "primary.light",
-                    borderRadius: "12px",
+                    borderRadius: "8px",
                     px: 2, 
                     py: 0.5, 
                     fontSize: "14px",
