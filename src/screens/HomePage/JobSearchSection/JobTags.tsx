@@ -1,30 +1,18 @@
-import { Box, Button, Typography } from "@mui/material"
-import { jobTags } from "../../../constants/homePageData"
+import { Box, Button, Typography } from "@mui/material";
+import { jobTags } from "../../../constants/homePageData";
+import { jobTagsStyles } from "../../../styles/HomePageStyles";
 
-export const JobTags = () =>{
-    return(
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1, mt: 2 }}>
-        <Typography variant="body1" sx={{ color: "primary.light" }}>
-            Similar:
-        </Typography>
-        {jobTags.map((job, index) => (
-            <Button
-                key={index}
-                variant="outlined"
-                sx={{
-                    textTransform: "none",
-                    borderColor: "primary.light",
-                    color: "primary.light",
-                    borderRadius: "8px",
-                    px: 2, 
-                    py: 0.5, 
-                    fontSize: "14px",
-                   
-                }}
-            >
-                {job}
-            </Button>
-        ))}
+export const JobTags = () => {
+  return (
+    <Box sx={jobTagsStyles.container}>
+      <Typography variant="body1" sx={jobTagsStyles.typography}>
+        Similar:
+      </Typography>
+      {jobTags.map((job, index) => (
+        <Button key={index} variant="outlined" sx={jobTagsStyles.button}>
+          {job}
+        </Button>
+      ))}
     </Box>
-    )
-}
+  );
+};

@@ -15,38 +15,28 @@ import {
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Assets } from "../../../assets/Assets";
 import { stats } from "../../../constants/homePageData";
-import {
-  profileCardStyles,
-  profileAvatarContainer,
-  profileAvatar,
-  profileContent,
-  statsCardStyles,
-  calendarCardStyles,
-  accordionSummaryStyles,
-  accordionDetailsStyles,
-  calendarTextStyles,
-} from "../../../styles/ProfileSectionStyle";
+import { profileStyles } from "../../../styles/HomePageStyles";
 
 const UserProfileDetails = () => {
   return (
-    <Card sx={profileCardStyles}>
+    <Card sx={profileStyles.profileCard}>
       <CardMedia
         component="img"
         height="100"
         image={Assets.userProfileCoverImage}
         alt="User Cover"
       />
-      <Box sx={profileAvatarContainer}>
-        <Avatar src={Assets.userProfileImage} sx={profileAvatar} />
+      <Box sx={profileStyles.avatarContainer}>
+        <Avatar src={Assets.userProfileImage} sx={profileStyles.avatar} />
       </Box>
-      <CardContent sx={profileContent}>
-        <Typography variant="h6" sx={{ fontWeight: "bold", color: "text.primary" }}>
+      <CardContent sx={profileStyles.profileContent}>
+        <Typography variant="h6" sx={profileStyles.profileName}>
           Albert Flores
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ px: 2, color: "text.primary" }}>
+        <Typography variant="body2" sx={profileStyles.profileDescription}>
           Senior Product Designer | UI/UX Designer | Graphic Designer | Web...
         </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary", mt: 0.5 }}>
+        <Typography variant="body2" sx={profileStyles.profileLocation}>
           Clinton, Maryland
         </Typography>
       </CardContent>
@@ -56,7 +46,7 @@ const UserProfileDetails = () => {
 
 const UserStatistics = () => {
   return (
-    <Card sx={statsCardStyles}>
+    <Card sx={profileStyles.statsCard}>
       <CardContent>
         <Stack spacing={1.5}>
           {stats.map((stat) => (
@@ -80,13 +70,13 @@ const UserStatistics = () => {
 
 const UserCalendar = () => {
   return (
-    <Card sx={calendarCardStyles}>
+    <Card sx={profileStyles.calendarCard}>
       <CardContent sx={{ p: 0 }}>
         <Accordion elevation={0} disableGutters>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={accordionSummaryStyles}>
-            <Typography sx={calendarTextStyles}>My calendar</Typography>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={profileStyles.accordionSummary}>
+            <Typography sx={profileStyles.calendarText}>My calendar</Typography>
           </AccordionSummary>
-          <AccordionDetails sx={accordionDetailsStyles}>
+          <AccordionDetails sx={profileStyles.accordionDetails}>
             <Typography variant="body2" sx={{ color: "primary.light" }}>
               Upcoming Interviews
             </Typography>
